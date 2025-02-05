@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewpoint" content="width = device-width,initial-scale= 1 ">
+        <title>page 6</title>
+        <style>
+            button{
+                border: 0;
+                width: 100px;
+                height: 60px;
+                background-color: black;
+                color: white;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <button>start</button>
+        <p></p>
+
+
+        <button id="button2">press</button>
+        <p id="text2"></p>
+
+
+
+        <label for="weather"> 今天的天气</label>
+        <select id="weather">
+            <option id="">--ur choice--</option>
+            <option id="sunny">sunny</option>
+            <option id="rainy">rainy</option>
+            <option id="snowy">snowy</option>
+        </select>
+        <p id="text3"></p>
+
+
+        <script>
+            let myname;   //使用let来定义变量
+            myname; //通过使用变量来确定变量是否存在
+            let firstArray = [2,10,20];//用[ ]来定义一个数组
+            firstArray[1]; //调用20
+            let firstObject = {name:"name1", age : 12};
+            firstObject["name"];//return name1
+            // % 取模 求余 ** 次方 ++自增加 --自增减
+
+            const button1 = document.querySelector("button");
+            const text1 = document.querySelector("p");
+            button1.addEventListener("click",update);
+            function update(){
+                if(button1.textContent == "start"){
+                    button1.textContent ="stop";
+                    text1.textContent="started"
+                } else{
+                    button1.textContent="start";
+                    text1.textContent="stopped"
+                };
+            };
+
+            myname = "eric";
+            let greeting=`hell0,${myname}`
+            console.log(greeting)//控制台输出greeting
+
+            const button2 = document.querySelector("#button2");
+
+            button2.addEventListener("click",greeting2);
+            function greeting2(){
+                let name = prompt("name");
+                const text2 = document.querySelector("#text2");
+                text2.textContent= `wellcome mr ${name}`;
+                //模版字符串会保留源代码中的换行符 或用 \n
+                //使用/‘ 可以打出 ’
+                };
+            
+            let string1 = "superior";
+            console.log(string1.length);
+            console.log(string1[string1.length - 1]);//return the second last in the string
+
+            console.log(string1.indexOf("ri"));//false return -1
+            console.log(string1.toUpperCase());
+            console.log(string1.replace("ior",''));
+            secondObject = [1,2,4,['a','b']]; //内置数组
+            secondObject[3][1];//return b
+            for (let i =0; i < secondObject.length; i++){
+                console.log(secondObject[i]);
+            };
+
+            secondObject.push("newItem1");//add a new item to the last
+            secondObject.pop();//remove the last item
+            secondObject.shift();//remove the first item
+            secondObject.unshift("newItem2");//add a new item to the begaining
+
+            let string3 = "name1:name2:name3:name4";
+            let newArray = string3.split(":");//each of : will converted into an object of the array
+            console.log(newArray);
+            
+            const sele = document.querySelector("select");
+            const para = document.querySelector("#text3");
+            sele.addEventListener("change",setweather);
+            function setweather(){
+                const choice = sele.value;
+
+                if (choice == "sunny"){
+                    para.textContent="it is sunny";
+                }
+                if(choice == "rainy"){
+                    para.textContent ="it is rainy";
+                }
+                if(choice == "snowy" || 1+ 1 ==2){// || => or , && => and, ! => not
+                    para.textContent = "it is snowy";
+                }
+
+                switch (choice){
+                case "sunney":
+                    para.textContent = "go eat my shit";
+                    break;
+                }
+            }
+            
+            let Array1 = ['s','h','i','t'];
+            for (var i = 0;i < Array1.length; i++){
+                console.log(Array1[i]);
+            }
+
+
+
+            
+
+
+
+            
+
+        </script>
+    </body>
+</html>
